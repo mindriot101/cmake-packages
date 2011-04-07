@@ -1,12 +1,13 @@
 FIND_PATH(FITSIO_INCLUDE_DIR fitsio.h PATHS 
     /opt/local/include
     $ENV{HOME}/build/include
-    #/sw/include
+    /usr/local/cfitsio-thread # for wasphead
     )
 
 FIND_LIBRARY(FITSIO_LIBRARIES NAMES cfitsio PATHS
     /opt/local/lib
     $ENV{HOME}/build/lib
+    /usr/local/cfitsio-thread # for wasphead
     #/sw/lib
     )
 
