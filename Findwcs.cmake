@@ -1,0 +1,15 @@
+FIND_LIBRARY(WCS_LIBRARIES wcs PATH $ENV{HOME}/build/lib)
+
+if (WCS_INCLUDE_DIR AND WCS_LIBRARIES)
+    set (WCS_FOUND true)
+endif(WCS_INCLUDE_DIR AND WCS_LIBRARIES)
+
+if (WCS_FOUND)
+    if (NOT WCS_FIND_QUIETLY)
+        message(status "Found wcs: ${WCS_LIBRARIES}")
+    endif(NOT WCS_FIND_QUIETLY)
+else (WCS_FOUND)
+   if (WCS_FIND_REQUIRED)
+      message(fatal_error "Could not find wcs")
+    endif(WCS_FIND_REQUIRED)
+endif(WCS_FOUND) 
