@@ -1,18 +1,19 @@
-SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} $ENV{HOME}/cmake_packages)
-FIND_PACKAGE(mysql QUIET)
+FIND_PACKAGE(mysql REQUIRED)
 
 
 FIND_PATH(MYSQLPP_INCLUDES mysql++.h 
     PATHS 
-    /opt/local/include
     $ENV{HOME}/build/include
+    /opt/local/include
+    NO_DEFAULT_PATH
     PATH_SUFFIXES
     mysql++
     )
 
 FIND_LIBRARY(MYSQLPP_ONLY_LIBRARIES NAMES mysqlpp PATHS
-    /opt/local/lib
     $ENV{HOME}/build/lib
+    /opt/local/lib
+    NO_DEFAULT_PATH
     )
 
 

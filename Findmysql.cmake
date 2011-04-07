@@ -4,12 +4,15 @@ FIND_PATH(MYSQL_INCLUDE_DIR mysql.h
     $ENV{HOME}/build/include
     PATH_SUFFIXES
     mysql5/mysql
+    mysql
     )
 
 FIND_LIBRARY(MYSQL_LIBRARIES NAMES mysqlclient PATHS
     /opt/local/lib
     /opt/local/lib/mysql5/mysql
+    /usr/lib64
     )
+
 
 
 if (MYSQL_INCLUDE_DIR AND MYSQL_LIBRARIES)
