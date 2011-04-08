@@ -8,9 +8,11 @@ FIND_PATH(MYSQL_INCLUDE_DIR mysql.h
     )
 
 FIND_LIBRARY(MYSQL_LIBRARIES NAMES mysqlclient PATHS
+    $ENV{HOME}/build/lib/mysql
     /opt/local/lib
     /opt/local/lib/mysql5/mysql
     /usr/lib64
+    NO_DEFAULT_PATH
     )
 
 
