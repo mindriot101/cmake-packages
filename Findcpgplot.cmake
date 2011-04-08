@@ -1,16 +1,44 @@
-FIND_PATH(CPGPLOT_INCLUDE_DIR cpgplot.h /star/include)
+FIND_PATH(CPGPLOT_INCLUDE_DIR cpgplot.h 
+    PATHS
+    /star/include
+    /home/astro/phsaap/software/pgplot
+    )
 
-FIND_LIBRARY(CPGPLOT_LIBRARIES_PGPLOT NAMES pgplot PATHS
-    /star/lib /sw/lib/pgplot /usr/X11R6/lib)
-FIND_LIBRARY(CPGPLOT_LIBRARIES_CPGPLOT NAMES cpgplot PATHS
-    /star/lib /sw/lib/pgplot /usr/X11R6/lib)
-FIND_LIBRARY(CPGPLOT_LIBRARIES_X11 NAMES X11 PATHS
-    /star/lib /sw/lib/pgplot /usr/X11R6/lib)
+FIND_LIBRARY(CPGPLOT_LIBRARIES_PGPLOT 
+    NAMES 
+    pgplot 
+    PATHS
+    /home/astro/phsaap/software/pgplot
+    /star/lib /sw/lib/pgplot /usr/X11R6/lib
+    )
+
+FIND_LIBRARY(CPGPLOT_LIBRARIES_CPGPLOT 
+    NAMES 
+    cpgplot 
+    PATHS
+    /home/astro/phsaap/software/pgplot
+    /star/lib /sw/lib/pgplot /usr/X11R6/lib
+    )
+
+FIND_LIBRARY(CPGPLOT_LIBRARIES_X11 
+    NAMES 
+    X11 
+    PATHS
+    /star/lib /sw/lib/pgplot /usr/X11R6/lib
+    )
+
+FIND_LIBRARY(CPGPLOT_LIBRARIES_PNG
+    NAMES
+    png
+    PATHS
+    /usr/lib64
+    )
 
 set(CPGPLOT_LIBRARIES
     ${CPGPLOT_LIBRARIES_PGPLOT}
     ${CPGPLOT_LIBRARIES_CPGPLOT}
     ${CPGPLOT_LIBRARIES_X11}
+    ${CPGPLOT_LIBRARIES_PNG}
     )
 
 
