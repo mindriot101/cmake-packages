@@ -1,0 +1,29 @@
+FIND_PATH(FREEIMAGE_INCLUDE_DIR FreeImage.h
+    PATHS 
+    /opt/local/include
+    $ENV{HOME}/build/include
+    )
+
+FIND_LIBRARY(FREEIMAGE_LIBRARIES NAMES freeimage PATHS
+    $ENV{HOME}/build/lib
+    /opt/local/lib
+    )
+
+
+
+
+
+if (FREEIMAGE_INCLUDE_DIR AND FREEIMAGE_LIBRARIES)
+    set (FREEIMAGE_FOUND true)
+endif(FREEIMAGE_INCLUDE_DIR AND FREEIMAGE_LIBRARIES)
+
+
+if (FREEIMAGE_FOUND)
+    if (NOT FREEIMAGE_FIND_QUIETLY)
+        message(STATUS "Found Freeimage: ${FREEIMAGE_LIBRARIES}")
+    endif(NOT FREEIMAGE_FIND_QUIETLY)
+else (FREEIMAGE_FOUND)
+   if (FREEIMAGE_FIND_REQUIRED)
+       message(FATAL_ERROR "Could not find Freeimage")
+    endif(FREEIMAGE_FIND_REQUIRED)
+endif(FREEIMAGE_FOUND) 
