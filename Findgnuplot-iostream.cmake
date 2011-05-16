@@ -2,12 +2,10 @@
 SET(LIBRARY GNUPLOT_IOS)
 SET(LIBRARYNAME Gnuplot-iostream)
 FIND_PACKAGE(Boost COMPONENTS iostreams REQUIRED)
-FIND_PATH(${LIBRARY}_INCLUDE_DIR gnuplot-iostream.h # insert the header file name here
+FIND_PATH(${LIBRARY}_INCLUDE_DIR gnuplot-iostream/gnuplot-iostream.h # insert the header file name here
     PATHS 
     /opt/local/include
     $ENV{HOME}/build/include
-    PATH_SUFFIXES
-    gnuplot-iostream
     )
 
 #FIND_LIBRARY(${LIBRARY}_LIBRARIES 
