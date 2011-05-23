@@ -1,13 +1,11 @@
 FIND_PACKAGE(mysql REQUIRED)
 
 
-FIND_PATH(MYSQLPP_INCLUDES mysql++.h 
+FIND_PATH(MYSQLPP_INCLUDES mysql++/mysql++.h 
     PATHS 
     $ENV{HOME}/build/include
     /opt/local/include
     NO_DEFAULT_PATH
-    PATH_SUFFIXES
-    mysql++
     )
 
 FIND_LIBRARY(MYSQLPP_ONLY_LIBRARIES NAMES mysqlpp PATHS
