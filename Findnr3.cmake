@@ -1,4 +1,6 @@
-FIND_PATH(NR3_INCLUDE_DIR nr3.h PATH_SUFFIXES nr $ENV{HOME}/build/include)
+FIND_PATH(NR3_INCLUDE_DIR nr/nr3.h 
+    $ENV{HOME}/build/include
+    )
 
 
 if (NR3_INCLUDE_DIR)
@@ -14,6 +16,4 @@ else (NR3_FOUND)
       message(FATAL_ERROR "Could not find nr3")
     endif(NR3_FIND_REQUIRED)
 endif(NR3_FOUND) 
-
-set(NR3_INCLUDE_DIR ${NR3_INCLUDE_DIR}/..)
 
