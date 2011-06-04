@@ -7,6 +7,7 @@ FIND_PATH(CCFITS_INCLUDE_DIR CCfits/CCfits PATHS
 
 FIND_LIBRARY(CCFITS_LIBRARIES NAMES CCfits PATHS
     $ENV{HOME}/build/lib64
+    $ENV{HOME}/build/lib
     /usr/local/lib
     )
 
