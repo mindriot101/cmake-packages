@@ -1,8 +1,6 @@
-FIND_PATH(GA_INCLUDE_DIR ga.h PATHS 
+FIND_PATH(GA_INCLUDE_DIR ga/ga.h PATHS 
     $ENV{HOME}/build/include
     /opt/local/include
-    PATH_SUFFIXES
-    ga
     )
 
 FIND_LIBRARY(GA_LIBRARIES NAMES ga PATHS
