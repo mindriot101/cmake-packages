@@ -1,16 +1,31 @@
 FIND_PACKAGE(fitsio REQUIRED)
 
-FIND_PATH(CCFITS_INCLUDE_DIR CCfits/CCfits PATHS 
-    $ENV{HOME}/build/include
-    NO_DEFAULT_PATH
-    #/usr/local/include
-    )
+if ("$ENV{HOSTNAME}" STREQUAL "wasphead")
+    FIND_PATH(CCFITS_INCLUDE_DIR CCfits/CCfits PATHS 
+        $ENV{HOME}/build/include
+        NO_DEFAULT_PATH
+        #/usr/local/include
+        )
+    FIND_LIBRARY(CCFITS_LIBRARIES NAMES CCfits PATHS
+        $ENV{HOME}/build/lib64
+        $ENV{HOME}/build/lib
+        #/usr/local/lib
+        )
+else()
+    FIND_PATH(CCFITS_INCLUDE_DIR CCfits/CCfits PATHS 
+        $ENV{HOME}/build/include
+        #NO_DEFAULT_PATH
+        /usr/local/include
+        )
+    
+    FIND_LIBRARY(CCFITS_LIBRARIES NAMES CCfits PATHS
+        $ENV{HOME}/build/lib64
+        $ENV{HOME}/build/lib
+        /usr/local/lib
+        )
+endif()
 
-FIND_LIBRARY(CCFITS_LIBRARIES NAMES CCfits PATHS
-    $ENV{HOME}/build/lib64
-    $ENV{HOME}/build/lib
-    #/usr/local/lib
-    )
+
 
 if (CCFITS_INCLUDE_DIR AND CCFITS_LIBRARIES AND FITSIO_INCLUDE_DIR AND FITSIO_LIBRARIES)
     set (CCFITS_FOUND true)
