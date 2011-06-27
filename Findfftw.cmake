@@ -1,9 +1,11 @@
+
 FIND_PATH(FFTW_INCLUDE_DIR fftw3.h PATHS
     $ENV{HOME}/build/include
     /opt/local/include)
 
-FIND_LIBRARY(FFTW_LIBRARIES fftw3 PATHS /home/astro/phrfbf/build/lib
-    $ENV{HOME}d/lib 
+FIND_LIBRARY(FFTW_LIBRARIES fftw3 
+    PATHS 
+    $ENV{HOME}/lib 
     /opt/local/lib NO_DEFAULT_PATH)
 
 if (FFTW_INCLUDE_DIR AND FFTW_LIBRARIES)
