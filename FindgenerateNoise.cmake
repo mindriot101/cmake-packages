@@ -1,6 +1,12 @@
-FIND_PATH(GENERATENOISE_INCLUDE_DIR generateNoise.h /home/astro/phrfbf/build/include)
+FIND_PATH(GENERATENOISE_INCLUDE_DIR 
+	generateNoise.h 
+	$ENV{HOME}/build/include)
 
-FIND_LIBRARY(GENERATENOISE_LIBRARIES NAMES colouredNoise PATH /home/astro/phrfbf/build/lib)
+FIND_LIBRARY(GENERATENOISE_LIBRARIES 
+	NAMES 
+	colouredNoise 
+	PATH 
+	$ENV{HOME}/build/lib)
 
 if (GENERATENOISE_INCLUDE_DIR AND GENERATENOISE_LIBRARIES)
     set (GENERATENOISE_FOUND true)
